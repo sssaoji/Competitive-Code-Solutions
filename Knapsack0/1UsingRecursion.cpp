@@ -11,7 +11,7 @@ int knap(vector<int> wt, vector<int> arr, int w, int size)
     {
         return max(arr[size - 1] + knap(wt, arr, w - wt[size - 1], size - 1), knap(wt, arr, w, size - 1));
     }
-    if (wt[size - 1] > w)
+    else if (wt[size - 1] > w)
     {
         return knap(wt, arr, w, size - 1);
     }
