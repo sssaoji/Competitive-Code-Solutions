@@ -21,28 +21,22 @@ public:
                 break;
             }
         }
-        if(!(top<=btm))
-        {
+        if (top <= btm) {
+
+            int l = 0;
+            int r = siz;
+            while (l <= r) {
+                int mid1 = (l + r) / 2;
+                if (matrix[top][mid1] == target) {
+                    return true;
+                }
+                if (matrix[top][mid1] < target) {
+                    l = mid1 + 1;
+                } else if (matrix[top][mid1] > target) {
+                    r = mid1 - 1;
+                }
+            }
             return false;
-        }
-        int l = 0;
-        int r = siz;
-        while(l<=r)
-        {
-            int mid1 = (l+r)/2;
-            if(matrix[top][mid1]==target)
-            {
-                return true;
-            }
-            if(matrix[top][mid1]<target)
-            {
-                l = mid1+1;
-            }
-            else if(matrix[top][mid1]>target)
-            {
-                r = mid1-1;
-            }
-        }
-        return false;
+        } else return false;
     }
 };
