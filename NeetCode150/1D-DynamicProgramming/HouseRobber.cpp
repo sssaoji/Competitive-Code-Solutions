@@ -18,6 +18,6 @@ public:
         return arr[i]=max(nums[i]+ ans(i+2,nums), ans(i+1,nums));
     }
     int rob(vector<int>& nums) {
-        return max(ans(0,nums), ans(1,nums));
+        return ans(0,nums);
     }
 };
